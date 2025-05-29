@@ -1,13 +1,13 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
-
+const dotenv=require('dotenv')
 const app = express();
 app.use(cors());
 app.use(express.json());
-
+dotenv.config();
 // Connect to MongoDB
-mongoose.connect('mongodb://localhost:27017/contactdb', {
+mongoose.connect(process.env.MONGODB_URI, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 })
