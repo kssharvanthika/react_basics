@@ -8,7 +8,7 @@ export default function ContactList() {
 
   // Fetch contacts from MongoDB
   const fetchContacts = () => {
-    axios.get('http://localhost:5000/contacts')
+    axios.get('https://react-basics-1-5dag.onrender.com/contacts')
       .then((res) => setContacts(res.data))
       .catch(err => console.error('Fetch error:', err));
   };
@@ -29,7 +29,7 @@ export default function ContactList() {
 
     if (editingId) {
       // Update contact
-      axios.put(`http://localhost:5000/contacts/${editingId}`, form)
+      axios.put(`https://react-basics-1-5dag.onrender.com/${editingId}`, form)
         .then(() => {
           fetchContacts();
           setForm({ name: '', email: '', message: '' });
@@ -38,7 +38,7 @@ export default function ContactList() {
         .catch(err => alert('Error updating contact'));
     } else {
       // Create contact
-      axios.post('http://localhost:5000/contacts', form)
+      axios.post('https://react-basics-1-5dag.onrender.com', form)
         .then(() => {
           fetchContacts();
           setForm({ name: '', email: '', message: '' });
@@ -50,7 +50,7 @@ export default function ContactList() {
   // Delete a contact
   const handleDelete = (id) => {
     if (window.confirm('Are you sure you want to delete this contact?')) {
-      axios.delete(`http://localhost:5000/contacts/${id}`)
+      axios.delete(`https://react-basics-1-5dag.onrender.com/contacts/${id}`)
         .then(() => fetchContacts())
         .catch(err => alert('Error deleting contact'));
     }
