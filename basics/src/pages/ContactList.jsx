@@ -29,7 +29,7 @@ export default function ContactList() {
 
     if (editingId) {
       // Update contact
-      axios.put(`https://react-basics-1-5dag.onrender.com/${editingId}`, form)
+      axios.put(`https://react-basics-1-5dag.onrender.com/contacts/${editingId}`, form)
         .then(() => {
           fetchContacts();
           setForm({ name: '', email: '', message: '' });

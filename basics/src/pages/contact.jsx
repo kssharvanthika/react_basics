@@ -13,7 +13,7 @@ export default function Contact() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('https://react-basics-1-5dag.onrender.com/contact', form);
+      await axios.post('https://react-basics-1-5dag.onrender.com/contacts', form);
       alert('Message sent successfully!');
       setForm({ name: '', email: '', message: '' });
     } catch (err) {
