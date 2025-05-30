@@ -38,7 +38,7 @@ export default function ContactList() {
         .catch(err => alert('Error updating contact'));
     } else {
       // Create contact
-      axios.post('https://react-basics-1-5dag.onrender.com', form)
+      axios.post('https://react-basics-1-5dag.onrender.com/contacts', form)
         .then(() => {
           fetchContacts();
           setForm({ name: '', email: '', message: '' });
